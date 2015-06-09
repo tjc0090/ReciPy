@@ -4,6 +4,7 @@ __author__ = 'Travis'
 import RecipeIndexViewer
 import ReciPyInput
 import ReciPyEditDel
+import GroceryList
 
 
 def intro():
@@ -25,7 +26,9 @@ def commands():
     1. Enter a new recipe
     2. View an existing recipe
     3. View a list of all existing recipes
-    4. Safely exit the program"""
+    4. Safely exit the program
+    5. Delete a recipe
+    6. Create a grocery list"""
 
     choice = raw_input("Enter your selection here: ")
 
@@ -39,6 +42,8 @@ def commands():
         raise SystemExit
     elif choice == '5':
         ReciPyEditDel.del_recipe()
+    elif choice == '6':
+        print GroceryList.ingredients_list()
     else:
         print "Input was invalid, please try again."
 

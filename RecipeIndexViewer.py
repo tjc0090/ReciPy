@@ -16,8 +16,13 @@ def index_viewer():
 def recipe_printer():
     """prints out an individual recipe in full"""
 
-    recipe = raw_input("What is the name of the recipe you want to view (don't use capital letters? ")
+    path = os.curdir
+    recipe = raw_input("What is the name of the recipe you want to view (don't use capital letters)? ")
     recipe += '.txt'
-    output = open(recipe)
-    print output.read()
-    output.close()
+    if recipe in path:
+        output = open(recipe)
+        print output.read()
+        output.close()
+    else:
+        print "recipe was not found, please check your spelling."
+        pass
